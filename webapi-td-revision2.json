@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/webapi-td:2",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/webapi-td:3",
     "containerDefinitions": [
         {
             "name": "webapi",
-            "image": "851725182157.dkr.ecr.ap-southeast-2.amazonaws.com/webapi",
+            "image": "public.ecr.aws/k8w5m5l7/webapi",
             "cpu": 0,
             "portMappings": [
                 {
@@ -26,16 +26,10 @@
     "family": "webapi-td",
     "executionRoleArn": "arn:aws:iam::851725182157:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 3,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
-        },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
         },
@@ -49,7 +43,7 @@
         "FARGATE"
     ],
     "requiresCompatibilities": [
-        "EC2"
+        "FARGATE"
     ],
     "cpu": "1024",
     "memory": "3072",
@@ -57,7 +51,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-06T22:11:00.560Z",
+    "registeredAt": "2024-04-06T23:34:26.273Z",
     "registeredBy": "arn:aws:iam::851725182157:root",
     "tags": []
 }
