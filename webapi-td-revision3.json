@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/webAppTd:4",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/webapp-api-td:1",
     "containerDefinitions": [
         {
-            "name": "webapp",
-            "image": "851725182157.dkr.ecr.ap-southeast-2.amazonaws.com/webapp:71074b8e0275ab44d7f45b4946d16b0d890dfd94",
+            "name": "webapi",
+            "image": "851725182157.dkr.ecr.ap-southeast-2.amazonaws.com/webapp:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -17,17 +17,19 @@
                     "name": "443",
                     "containerPort": 443,
                     "hostPort": 443,
-                    "protocol": "tcp",
-                    "appProtocol": "http"
+                    "protocol": "tcp"
                 }
             ],
             "essential": true,
             "environment": [],
+            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
+            "ulimits": [],
             "healthCheck": {
                 "command": [
-                    "CMD-SHELL curl - f http:localhost:80/weatherforecast || exit 1"
+                    "CMD-SHELL",
+                    "curl -f http://localhost:80/weatherforecast || exit 1"
                 ],
                 "interval": 30,
                 "timeout": 5,
@@ -36,10 +38,10 @@
             "systemControls": []
         }
     ],
-    "family": "webAppTd",
+    "family": "webapp-api-td",
     "executionRoleArn": "arn:aws:iam::851725182157:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 4,
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -76,7 +78,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-07T10:03:26.796Z",
-    "registeredBy": "arn:aws:iam::851725182157:root",
+    "registeredAt": "2024-04-07T23:45:22.961Z",
+    "registeredBy": "arn:aws:iam::851725182157:user/adminJune",
     "tags": []
 }
