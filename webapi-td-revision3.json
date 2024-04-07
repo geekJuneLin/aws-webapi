@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/webapi-td:4",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/webapi-task-definition:1",
     "containerDefinitions": [
         {
-            "name": "webapi-new",
+            "name": "awsWebApi",
             "image": "public.ecr.aws/k8w5m5l7/webapi-new",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "webapi-80-tcp",
+                    "name": "awswebapi-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -23,10 +23,9 @@
             "systemControls": []
         }
     ],
-    "family": "webapi-td",
-    "executionRoleArn": "arn:aws:iam::851725182157:role/ecsTaskExecutionRole",
+    "family": "webapi-task-definition",
     "networkMode": "awsvpc",
-    "revision": 4,
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -51,7 +50,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-07T00:00:49.377Z",
+    "registeredAt": "2024-04-07T07:56:02.540Z",
     "registeredBy": "arn:aws:iam::851725182157:root",
     "tags": []
 }
