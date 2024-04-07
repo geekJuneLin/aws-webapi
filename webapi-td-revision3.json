@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/webAppTd:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/webAppTd:2",
     "containerDefinitions": [
         {
             "name": "webapp",
-            "image": "public.ecr.aws/k8w5m5l7/webapp:latest",
+            "image": "851725182157.dkr.ecr.ap-southeast-2.amazonaws.com/webapp:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -33,10 +33,16 @@
     "family": "webAppTd",
     "executionRoleArn": "arn:aws:iam::851725182157:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 1,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
         },
@@ -58,7 +64,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-07T09:04:48.794Z",
+    "registeredAt": "2024-04-07T09:21:39.289Z",
     "registeredBy": "arn:aws:iam::851725182157:root",
     "tags": []
 }
