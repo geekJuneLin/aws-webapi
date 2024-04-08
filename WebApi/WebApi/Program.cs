@@ -35,6 +35,11 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+app.MapGet("/helloWorld", () =>
+{
+    return Results.Ok("Hello world from a new CI/CD pipeline.");
+});
+
 app.Run();
 
 internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
