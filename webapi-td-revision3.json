@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/webapp-api-td:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:851725182157:task-definition/dotnet-webapp-td:1",
     "containerDefinitions": [
         {
             "name": "webapi",
-            "image": "851725182157.dkr.ecr.ap-southeast-2.amazonaws.com/webapp:latest",
+            "image": "851725182157.dkr.ecr.ap-southeast-2.amazonaws.com/dotnet-webapp",
             "cpu": 0,
             "portMappings": [
                 {
@@ -17,7 +17,8 @@
                     "name": "443",
                     "containerPort": 443,
                     "hostPort": 443,
-                    "protocol": "tcp"
+                    "protocol": "tcp",
+                    "appProtocol": "http"
                 }
             ],
             "essential": true,
@@ -26,19 +27,10 @@
             "mountPoints": [],
             "volumesFrom": [],
             "ulimits": [],
-            "healthCheck": {
-                "command": [
-                    "CMD-SHELL",
-                    "curl -f http://localhost:80/weatherforecast || exit 1"
-                ],
-                "interval": 30,
-                "timeout": 5,
-                "retries": 3
-            },
             "systemControls": []
         }
     ],
-    "family": "webapp-api-td",
+    "family": "dotnet-webapp-td",
     "executionRoleArn": "arn:aws:iam::851725182157:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
@@ -46,13 +38,7 @@
     "status": "ACTIVE",
     "requiresAttributes": [
         {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.24"
-        },
-        {
             "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "ecs.capability.container-health-check"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
@@ -78,7 +64,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-07T23:45:22.961Z",
-    "registeredBy": "arn:aws:iam::851725182157:user/adminJune",
+    "registeredAt": "2024-04-08T02:49:14.468Z",
+    "registeredBy": "arn:aws:iam::851725182157:root",
     "tags": []
 }
